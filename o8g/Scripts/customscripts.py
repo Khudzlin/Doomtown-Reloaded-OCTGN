@@ -665,7 +665,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       elif len(retrieveTuple[1]):
          deed = retrieveTuple[1][0]
          deed.markers[mdict['ProdMinus']] += num(deed.Production)
-         deed.markers[mdict['ControlMinus']] += num(deed.Control)
+         deed.markers[mdict['PermControlMinus']] += num(deed.Control)
          attachCard(card,deed)
          notify("{} startings haunting {}".format(card,deed))
    elif card.name == "Notary Public" and action == 'USE':
@@ -1315,3 +1315,4 @@ def DeniseBrancini():
    for c in me.piles['Boot Hill']:
       if c.type == 'Joker': c.moveTo(me.Deck)
    shuffle(me.Deck)
+   
